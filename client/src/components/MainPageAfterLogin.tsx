@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CreateButton } from "./CreateButton";
 import { useState } from "react";
@@ -13,6 +12,11 @@ export const MainPageAfterLogin = () => {
     }
     navigate(`/room/${meetingLink}`);
   };
+  const logoutFunc = () => {
+    localStorage.removeItem("user");
+    alert("Logged out successfully");
+    navigate("/");
+  };
 
   return (
     <>
@@ -22,7 +26,9 @@ export const MainPageAfterLogin = () => {
         </h1>
         <div className="border border-black rounded p-4">
           <div className="flex justify-center">Creating a new Room?</div>
-         <div className="flex justify-center"><CreateButton /></div> 
+          <div className="flex justify-center">
+            <CreateButton />
+          </div>
           <div className="mt-4 flex justify-center">Already have a ID?</div>
           <div className="flex">
             <input
@@ -39,11 +45,11 @@ export const MainPageAfterLogin = () => {
             </button>
           </div>
           <div className="mt-4 flex justify-center">
-            <Link to={"/"}>
-              <button className="bg-rose-400 hover:bg-rose-500 text-white font-bold py-2 px-4 rounded">
-                Log Out
-              </button>
-            </Link>
+            <button
+              className="bg-rose-400 hover:bg-rose-500 text-white font-bold py-2 px-4 rounded"
+              onClick={logoutFunc}>
+              Log Out
+            </button>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ export const SignUp = () => {
     <>
       <div className="flex items-center justify-center h-screen">
         <div className="border-2 border-black p-4 rounded-md">
-          <h1 className="text-2xl font-bold mb-4 text-center">Sign Up</h1>
+          <h1 className="text-2xl font-bold mb-4 text-center">Sign Up for InterviewUp</h1>
           <form className="flex flex-col items-center">
             <div className="mb-4">It's free, secure and easy to use.</div>
             <input

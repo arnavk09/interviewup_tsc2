@@ -12,13 +12,13 @@ export const RoomContext = createContext<null | any>(null);
 
 const ws = socketIOClient(WS);
 interface IRoomContext {
-    ws: Socket;
-    me?: Peer;
-    stream?: MediaStream;
-    peers: PeerState;
-    shareScreen: () => void;
-    screenSharingId: string;
-    setRoomId: (id: string | undefined) => void;
+  ws: Socket;
+  me?: Peer;
+  stream?: MediaStream;
+  peers: PeerState;
+  shareScreen: () => void;
+  screenSharingId: string;
+  setRoomId: (id: string | undefined) => void;
 }
 export const RoomProvider = ({ children }: any) => {
   const navigate = useNavigate();
@@ -45,6 +45,10 @@ export const RoomProvider = ({ children }: any) => {
 
   const removePeer = (peerId: string) => {
     dispatch(removePeerAction(peerId));
+    const video = document.getElementById(peerId);
+    if (video) {
+      video.remove();
+    }
   };
   const switchStream = (stream: MediaStream) => {
     setStream(stream);

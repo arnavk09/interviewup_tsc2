@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
-import ReactTooltip from "react-tooltip";
+import { useContext } from "react";
+import { RoomContext } from "../context/RoomContext";
 export const LeaveMeeting = () => {
+  const { ws, me} = useContext(RoomContext);
+  const leaveMeetingFunction = () => {
+    alert("Leaving meeting. CLOSE TAB TO DISCONNECT.");
+    ws.emit("user-disconnected", { peerId: me._id });
+  };
   return (
     <>
       <div>
         <Link to={"/videocall"}>
           <button
+            onClick={leaveMeetingFunction}
             className="bg-rose-400 p-4 rounded-lg text-xl hover:bg-rose-600 text-white"
             data-tip="Leave Meeting">
             <svg
