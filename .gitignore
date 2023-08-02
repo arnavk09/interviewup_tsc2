@@ -1,6 +1,8 @@
 # dependencies
 /client/node_modules
 /server/node_modules
+/realtimeide/node_modules
+/resumestore/node_modules
 /.pnp
 .pnp.js
 # testing
@@ -19,3 +21,9 @@
 START SEQUENCE.txt
 resumestore/src/App.js
 realtimeide/.gitignore
+realtimeide/.eslintrc.json
+realtimeide/.vercelignore
+realtimeide/next-env.d.ts
+realtimeide/next.config.js
+realtimeide/package.json
+realtimeide/postcss.config.js
