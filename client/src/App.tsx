@@ -1,4 +1,4 @@
-import React from "react";
+import { IDEHome } from "./pages/IDEHome";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { ErrorPage } from "./pages/ErrorPage";
@@ -20,7 +20,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/room/:id" element={<Room />} />
           <Route path="/videocall" element={<MainPageAfterLogin />}></Route>
-          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/idehome" element={<IDEHome />} />
         </Routes>
       </RoomProvider>
     </BrowserRouter>

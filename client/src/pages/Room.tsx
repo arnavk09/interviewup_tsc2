@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { VideoPlayer } from "../components/VideoPlayer";
 import { RoomContext } from "../context/RoomContext";
 import { LeaveMeeting } from "../components/LeaveMeeting";
+
+import { OpenIDE } from "../components/OpenIDE";
 export const Room = () => {
   const { id } = useParams();
   const { ws, me, peers, stream } = useContext(RoomContext);
@@ -37,6 +39,7 @@ export const Room = () => {
         </div>
         <div className="fixed bottom-0 p-6 w-full flex justify-center border-t-2">
           <LeaveMeeting />
+          <OpenIDE/>
           {/* <ChatButton onClick={toggleChat} /> */}
         </div>
       </div>
