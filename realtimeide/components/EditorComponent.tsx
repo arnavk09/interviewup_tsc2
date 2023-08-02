@@ -27,7 +27,6 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
         className="text-xl"
         height="91vh"
         onChange={onChange}
-        // defaultLanguage={language}
         language={language}
         value={code}
         theme="vs-dark"

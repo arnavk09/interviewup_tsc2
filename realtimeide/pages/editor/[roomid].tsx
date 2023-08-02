@@ -46,7 +46,6 @@ const EditorContainer: React.FC<EditorProps> = ({}) => {
     console.log("Socket error", e && e?.message);
     toast.error("Socket Connection failed, try again later");
     setTimeout(() => {
-      //   router.push("/");
     }, 4000);
   }
   async function copyRoomId() {
@@ -284,7 +283,6 @@ const EditorContainer: React.FC<EditorProps> = ({}) => {
               <ConsoleSection />
             </div>
           </div>
-          {/* // dummyFilesData.find((element) => element.name === activeFile) */}
         </div>
       </div>
     </div>
