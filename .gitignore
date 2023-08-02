@@ -17,3 +17,5 @@
 .env.test.local
 .env.production.local
 START SEQUENCE.txt
+resumestore/src/App.js
+realtimeide/.gitignore
